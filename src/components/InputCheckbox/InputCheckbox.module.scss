@@ -1,1 +1,39 @@
 @import 'src/styles/variables';
+
+.checkbox__label {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding-left: 2.1rem;
+
+  .checkbox__input {
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    &:checked {
+      + .checkbox__span {
+        background-color: $green;
+        border-color: $green;
+        background-image: url("data:image/svg+xml,%3Csvg width='14' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2318171F' stroke-width='3' fill='none' d='M1 5.607 4.393 9l8-8'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+        transition: color 0.3s ease;
+      }
+    }
+  }
+  .checkbox__span {
+    transition: all 0.4s ease;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+
+    margin-top: -2.5px;
+    margin-left: -30px;
+    border-radius: 2px;
+    border: 2px solid $text;
+    &:hover {
+      border-color: $green;
+    }
+  }
+}

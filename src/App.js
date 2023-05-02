@@ -3,6 +3,11 @@ import InputCheckbox from './components/InputCheckbox/InputCheckbox';
 import InputRange from './components/InputRange/InputRange';
 
 function App() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(event);
+  };
+
   return (
     <>
       <h1 className={styles.title}>Password generator</h1>
@@ -17,7 +22,7 @@ function App() {
           </svg>
         </div>
       </div>
-      <form className={styles.container}>
+      <form className={styles.container} onSubmit={() => handleSubmit}>
         <InputRange />
         <InputCheckbox
           label={'Include Uppercase Letters'}
@@ -61,9 +66,9 @@ function App() {
 
         <button className={styles.button} type="submit">
           GENERATE
-          <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+          <svg className={styles.button__svg}>
             <path
-              fill="#24232C"
+              className={styles.button__path}
               d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"
             />
           </svg>

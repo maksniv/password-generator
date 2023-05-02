@@ -2,6 +2,7 @@
 
 .title {
   color: $title;
+  font-size: 1rem;
 }
 
 .field {
@@ -14,15 +15,30 @@
 
   background-color: $blackContainer;
   .field__text {
+    font-size: 1.5rem;
     color: $textPassword;
   }
   .field__copy_svg {
     width: 21px;
     height: 24px;
+    &:hover {
+      .field__copy_path {
+        fill: white;
+      }
+      cursor: pointer;
+    }
   }
   .field__copy_path {
     fill: $green;
   }
+  .copy {
+    gap: 1rem;
+    align-items: center;
+  }
+
+  // .copyIcon .copyIcon:hover .copyIconPath {
+  //   fill: white;
+  // }
 }
 
 .container {
@@ -47,6 +63,7 @@
   justify-content: space-between;
   align-items: center;
   .strength__title {
+    color: $title;
   }
   .strength__level {
     display: flex;
@@ -70,10 +87,19 @@
   padding-bottom: 1.125rem;
   border: 2px solid $green;
   background-color: $green;
-  svg {
-    margin-left: 1rem;
-  }
+  transition: all 0.5s;
   &:hover {
+    .button__svg {
+      background-color: $blackContainer;
+    }
+    background-color: $blackContainer;
     cursor: pointer;
+  }
+  .button__svg {
+    margin-left: 1rem;
+    background-color: $green;
+    width: 12px;
+    height: 12px;
+    transition: all 0.5s;
   }
 }

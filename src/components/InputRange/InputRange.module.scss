@@ -1,28 +1,38 @@
 @import 'src/styles/variables';
 
-.inputRange {
-  background: $green;
-  accent-color: white;
-  cursor: pointer;
-  height: 8px;
-//   background-image: linear-gradient(
-//     hsl(var(--clr-neonGreen)),
-//     hsl(var(--clr-neonGreen))
-//   );
-  background-size: 30% 100%;
-  background-repeat: no-repeat;
+.inputRange__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .inputRange__label_text {
+    font-size: 2rem;
+    color: $green;
+  }
 }
 
-// .inputRange::-webkit-slider-thumb {
-//   height: 28px;
-//   width: 28px;
-//   background: hsl(var(--clr-almostWhite));
-//   -webkit-appearance: none;
-//   border-radius: 14px;
-// }
+.inputRange {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 
-// .inputRange:hover::-webkit-slider-thumb {
-//   background: hsl(var(--clr-veryDarkGrey));
-//   border: 2px solid hsl(var(--clr-neonGreen));
-//   -webkit-appearance: none;
-// }
+  background: $blackShadowContainer;
+  accent-color: $green;
+  cursor: pointer;
+  height: 8px;
+
+  -webkit-appearance: none;
+  &::-webkit-slider-thumb {
+    height: 28px;
+    width: 28px;
+    background: $text;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    transition: all 0.25s;
+  }
+  &:hover::-webkit-slider-thumb {
+    background: $blackShadowContainer;
+    border: 2px solid $green;
+    -webkit-appearance: none;
+    transition: all 0.25s;
+  }
+}
