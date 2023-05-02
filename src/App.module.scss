@@ -21,8 +21,10 @@
   .field__copy_svg {
     width: 21px;
     height: 24px;
-    &:hover {
+    transition: all 0.25s;
+    &:active {
       .field__copy_path {
+        transition: all 0.25s;
         fill: white;
       }
       cursor: pointer;
@@ -35,10 +37,6 @@
     gap: 1rem;
     align-items: center;
   }
-
-  // .copyIcon .copyIcon:hover .copyIconPath {
-  //   fill: white;
-  // }
 }
 
 .container {
@@ -79,6 +77,34 @@
     border: 2px solid $text;
     margin-left: 0.5rem;
   }
+  .strength__division1 {
+  }
+  .strength__division2 {
+  }
+  .strength__division3 {
+  }
+  .strength__division4 {
+  }
+}
+
+.tooWeak {
+  background-color: red;
+  border: 2px solid red;
+}
+
+.weak {
+  background-color: orange;
+  border: 2px solid orange;
+}
+
+.medium {
+  background-color: yellow;
+  border: 2px solid yellow;
+}
+
+.strong {
+  background-color: green;
+  border: 2px solid green;
 }
 
 .button {
@@ -87,8 +113,8 @@
   padding-bottom: 1.125rem;
   border: 2px solid $green;
   background-color: $green;
-  transition: all 0.5s;
-  &:hover {
+  transition: all 0.25s;
+  &:active {
     .button__svg {
       background-color: $blackContainer;
     }
@@ -100,6 +126,6 @@
     background-color: $green;
     width: 12px;
     height: 12px;
-    transition: all 0.5s;
+    transition: all 0.25s;
   }
 }

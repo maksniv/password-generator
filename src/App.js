@@ -1,19 +1,51 @@
 import styles from './App.module.scss';
+import { useState } from 'react';
 import InputCheckbox from './components/InputCheckbox/InputCheckbox';
 import InputRange from './components/InputRange/InputRange';
+import {
+  passwordGenerator,
+  passwordStrengthGenerator,
+} from './passwordGenerator';
 
 function App() {
-  const handleSubmit = (event) => {
+  const [password, setPassword] = useState('P4$5W0rD!');
+  const [uppercase, setUppercase] = useState(false);
+  const [lowercase, setLowercase] = useState(false);
+  const [numbers, setNumbers] = useState(true);
+  const [symbols, setSymbols] = useState(false);
+  const [length, setLength] = useState(5);
+  const [passwordStrength, setPasswordStrength] = useState(' ');
+  // const [color, setColor] = useState(false);
+
+  const getCopyPassword = () => {
+    navigator.clipboard.writeText(password);
+  };
+
+  const changeLength = (event) => {
+    setLength(event.target.value);
+    setPasswordStrength(passwordStrengthGenerator(length));
+  };
+
+  const onSubmit = (event) => {
     event.preventDefault();
-    console.log(event);
+
+    setPassword(
+      passwordGenerator({
+        length: length,
+        uppercase: uppercase,
+        lowercase: lowercase,
+        numbers: numbers,
+        symbols: symbols,
+      })
+    );
   };
 
   return (
     <>
       <h1 className={styles.title}>Password generator</h1>
       <div className={styles.field}>
-        <p className={styles.field__text}>P4$5W0rD!</p>
-        <div className={styles.field__copy}>
+        <p className={styles.field__text}>{password}</p>
+        <div className={styles.field__copy} onClick={getCopyPassword}>
           <svg className={styles.field__copy_svg}>
             <path
               className={styles.field__copy_path}
@@ -22,44 +54,48 @@ function App() {
           </svg>
         </div>
       </div>
-      <form className={styles.container} onSubmit={() => handleSubmit}>
-        <InputRange />
+      <form className={styles.container} onSubmit={onSubmit}>
+        <InputRange length={length} onChange={changeLength} />
         <InputCheckbox
           label={'Include Uppercase Letters'}
-          id="checkboxUppercase"
-          name="checkboxUppercase"
+          id="Uppercase"
+          checked={uppercase}
+          onChange={() => setUppercase(!uppercase)}
         />
         <InputCheckbox
           label={'Include Lowercase Letters'}
-          id="checkboxLowercase"
-          name="checkboxLowercase"
+          id="Lowercase"
+          checked={lowercase}
+          onChange={() => setLowercase(!lowercase)}
         />
         <InputCheckbox
           label={'Include Numbers'}
-          id="checkboxNumbers"
-          name="checkboxNumbers"
+          id="Numbers"
+          checked={numbers}
+          onChange={() => setNumbers(!numbers)}
         />
         <InputCheckbox
           label={'Include Symbols'}
-          id="checkboxSymbols"
-          name="checkboxSymbols"
+          id="Symbols"
+          checked={symbols}
+          onChange={() => setSymbols(!symbols)}
         />
 
         <div className={styles.strength}>
           <h2 className={styles.strength__title}>Strength</h2>
           <div className={styles.strength__level}>
-            <p className={styles.strength__description}>weak</p>
+            <p className={styles.strength__description}>{passwordStrength}</p>
             <div
               className={`${styles.strength__division} ${styles.strength__division1}`}
             ></div>
             <div
-              className={`${styles.strength__division} ${styles.strength__division1}`}
+              className={`${styles.strength__division} ${styles.strength__division2}`}
             ></div>
             <div
-              className={`${styles.strength__division} ${styles.strength__division1}`}
+              className={`${styles.strength__division} ${styles.strength__division3}`}
             ></div>
             <div
-              className={`${styles.strength__division} ${styles.strength__division1}`}
+              className={`${styles.strength__division} ${styles.strength__division4}`}
             ></div>
           </div>
         </div>

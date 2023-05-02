@@ -1,16 +1,9 @@
 import styles from './InputRange.module.scss';
-import { useState } from 'react';
 
-const InputRange = () => {
-  const [length, setLength] = useState(0);
-
-  const changeLength = (event) => {
-    setLength(event.target.value);
-  };
-
+const InputRange = ({ length, onChange }) => {
   return (
     <>
-      <label className={styles.inputRange__label} for="slider">
+      <label className={styles.inputRange__label} htmlFor="slider">
         Character Length
         <span className={styles.inputRange__label_text}>{length}</span>
       </label>
@@ -18,9 +11,10 @@ const InputRange = () => {
         className={styles.inputRange}
         type="range"
         name="slider"
+        id="slider"
         min="5"
         max="20"
-        onChange={changeLength}
+        onChange={onChange}
         value={length}
       ></input>
     </>
