@@ -1,0 +1,79 @@
+@import 'src/styles/variables';
+
+.title {
+  color: $title;
+}
+
+.field {
+  width: 500px;
+  display: flex;
+  padding: 1rem;
+
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: $blackContainer;
+  .field__text {
+    color: $textPassword;
+  }
+  .field__copy_svg {
+    width: 21px;
+    height: 24px;
+  }
+  .field__copy_path {
+    fill: $green;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  padding: 1.5rem 2rem;
+  gap: 1rem;
+
+  width: 500px;
+  height: auto;
+
+  background-color: $blackContainer;
+  color: $text;
+}
+
+.strength {
+  display: flex;
+  background-color: $blackShadowContainer;
+  padding: 1rem;
+
+  justify-content: space-between;
+  align-items: center;
+  .strength__title {
+  }
+  .strength__level {
+    display: flex;
+    align-items: center;
+  }
+  .strength__description {
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+  .strength__division {
+    width: 10px;
+    height: 28px;
+    border: 2px solid $text;
+    margin-left: 0.5rem;
+  }
+}
+
+.button {
+  width: 100%;
+  padding-top: 1.125rem;
+  padding-bottom: 1.125rem;
+  border: 2px solid $green;
+  background-color: $green;
+  svg {
+    margin-left: 1rem;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}

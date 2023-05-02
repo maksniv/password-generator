@@ -1,0 +1,28 @@
+@import 'src/styles/variables';
+
+.inputRange {
+  background: $green;
+  accent-color: white;
+  cursor: pointer;
+  height: 8px;
+//   background-image: linear-gradient(
+//     hsl(var(--clr-neonGreen)),
+//     hsl(var(--clr-neonGreen))
+//   );
+  background-size: 30% 100%;
+  background-repeat: no-repeat;
+}
+
+// .inputRange::-webkit-slider-thumb {
+//   height: 28px;
+//   width: 28px;
+//   background: hsl(var(--clr-almostWhite));
+//   -webkit-appearance: none;
+//   border-radius: 14px;
+// }
+
+// .inputRange:hover::-webkit-slider-thumb {
+//   background: hsl(var(--clr-veryDarkGrey));
+//   border: 2px solid hsl(var(--clr-neonGreen));
+//   -webkit-appearance: none;
+// }

@@ -1,0 +1,56 @@
+@import '../node_modules/normalize.css/normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap');
+@import 'src/styles/variables';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $blackBody;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  overflow-x: hidden;
+}
+
+#root {
+  height: 100vh;
+  width: 100wh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
