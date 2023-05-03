@@ -34,7 +34,7 @@ export function passwordGenerator(initialConditions) {
 
 export function passwordStrengthGenerator(length) {
   if (length < 8) {
-    return 'tooWeak';
+    return 'too weak!';
   }
   if (length < 13 && length >= 8) {
     return 'weak';

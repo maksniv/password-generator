@@ -14,8 +14,7 @@ function App() {
   const [numbers, setNumbers] = useState(true);
   const [symbols, setSymbols] = useState(false);
   const [length, setLength] = useState(5);
-  const [passwordStrength, setPasswordStrength] = useState(' ');
-  // const [color, setColor] = useState(false);
+  const [passwordStrength, setPasswordStrength] = useState('too weak!');
 
   const getCopyPassword = () => {
     navigator.clipboard.writeText(password);
@@ -87,15 +86,19 @@ function App() {
             <p className={styles.strength__description}>{passwordStrength}</p>
             <div
               className={`${styles.strength__division} ${styles.strength__division1}`}
+              data-strength={passwordStrength}
             ></div>
             <div
               className={`${styles.strength__division} ${styles.strength__division2}`}
+              data-strength={passwordStrength}
             ></div>
             <div
               className={`${styles.strength__division} ${styles.strength__division3}`}
+              data-strength={passwordStrength}
             ></div>
             <div
               className={`${styles.strength__division} ${styles.strength__division4}`}
+              data-strength={passwordStrength}
             ></div>
           </div>
         </div>

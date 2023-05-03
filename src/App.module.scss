@@ -72,39 +72,40 @@
     margin-right: 0.5rem;
   }
   .strength__division {
-    width: 10px;
+    width: 12px;
     height: 28px;
     border: 2px solid $text;
     margin-left: 0.5rem;
   }
-  .strength__division1 {
+  .strength__division[data-strength='too weak!'] {
+    &.strength__division1 {
+      background-color: red;
+    }
   }
-  .strength__division2 {
+
+  .strength__division[data-strength='weak'] {
+    &.strength__division1,
+    &.strength__division2 {
+      background-color: orange;
+    }
   }
-  .strength__division3 {
+
+  .strength__division[data-strength='medium'] {
+    &.strength__division1,
+    &.strength__division2,
+    &.strength__division3 {
+      background-color: yellow;
+    }
   }
-  .strength__division4 {
+
+  .strength__division[data-strength='strong'] {
+    &.strength__division1,
+    &.strength__division2,
+    &.strength__division3,
+    &.strength__division4 {
+      background-color: $green;
+    }
   }
-}
-
-.tooWeak {
-  background-color: red;
-  border: 2px solid red;
-}
-
-.weak {
-  background-color: orange;
-  border: 2px solid orange;
-}
-
-.medium {
-  background-color: yellow;
-  border: 2px solid yellow;
-}
-
-.strong {
-  background-color: green;
-  border: 2px solid green;
 }
 
 .button {
