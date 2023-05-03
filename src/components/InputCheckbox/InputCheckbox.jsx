@@ -1,6 +1,8 @@
 import styles from './InputCheckbox.module.scss';
 
 const InputCheckbox = ({ label, checked, onChange }) => {
+  
+
   return (
     <>
       <label className={styles.checkbox__label}>

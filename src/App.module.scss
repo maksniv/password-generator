@@ -68,18 +68,22 @@
     align-items: center;
   }
   .strength__description {
+    text-align: center;
     text-transform: uppercase;
-    margin-right: 0.5rem;
+    margin-right: 0.2rem;
   }
   .strength__division {
     width: 12px;
     height: 28px;
     border: 2px solid $text;
     margin-left: 0.5rem;
+    transition: all 0.25s;
   }
   .strength__division[data-strength='too weak!'] {
     &.strength__division1 {
       background-color: red;
+      border-color: red;
+      transition: all 0.25s;
     }
   }
 
@@ -87,6 +91,8 @@
     &.strength__division1,
     &.strength__division2 {
       background-color: orange;
+      border-color: orange;
+      transition: all 0.25s;
     }
   }
 
@@ -95,6 +101,8 @@
     &.strength__division2,
     &.strength__division3 {
       background-color: yellow;
+      border-color: yellow;
+      transition: all 0.25s;
     }
   }
 
@@ -104,6 +112,8 @@
     &.strength__division3,
     &.strength__division4 {
       background-color: $green;
+      border-color: $green;
+      transition: all 0.25s;
     }
   }
 }
@@ -128,5 +138,18 @@
     width: 12px;
     height: 12px;
     transition: all 0.25s;
+  }
+}
+
+/* xs (<=543px) */
+@media (max-width: 575px) {
+  .field {
+    width: 350px;
+  }
+  .container {
+    width: 350px;
+  }
+  .strength__description {
+    font-size: 10px;
   }
 }

@@ -1,6 +1,4 @@
 export function passwordGenerator(initialConditions) {
-  console.log(initialConditions);
-
   const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
   const numbersChars = '0123456789';
@@ -21,13 +19,16 @@ export function passwordGenerator(initialConditions) {
     chars += symbolsChars;
   }
 
+  if (chars === '') {
+    return 'Use checkbox, please';
+  }
+
   let password = '';
 
   for (let i = 0; i < initialConditions.length; i++) {
     const randomNumber = Math.floor(Math.random() * chars.length);
     password += chars[randomNumber];
   }
-  console.log(password);
 
   return password;
 }
