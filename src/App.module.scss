@@ -144,12 +144,17 @@
 /* xs (<=543px) */
 @media (max-width: 575px) {
   .field {
-    width: 350px;
+    width: 90vw;
+    min-width: 320px;
   }
   .container {
-    width: 350px;
+    width: 90vw;
+    min-width: 320px;
   }
   .strength__description {
     font-size: 10px;
+  }
+  .strength__title {
+    font-size: 16px;
   }
 }
