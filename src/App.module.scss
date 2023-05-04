@@ -6,7 +6,9 @@
 }
 
 .field {
-  width: 500px;
+  width: 90vw;
+  min-width: 320px;
+  max-width: 500px;
   display: flex;
   padding: 1rem;
 
@@ -46,7 +48,9 @@
   padding: 1.5rem 2rem;
   gap: 1rem;
 
-  width: 500px;
+  width: 90vw;
+  min-width: 320px;
+  max-width: 500px;
   height: auto;
 
   background-color: $blackContainer;
@@ -141,16 +145,8 @@
   }
 }
 
-/* xs (<=543px) */
-@media (max-width: 575px) {
-  .field {
-    width: 90vw;
-    min-width: 320px;
-  }
-  .container {
-    width: 90vw;
-    min-width: 320px;
-  }
+
+@media (max-width: 430px) {
   .strength__description {
     font-size: 10px;
   }
