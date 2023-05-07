@@ -6,38 +6,50 @@
 }
 
 .field {
+  position: relative;
   width: 90vw;
   min-width: 320px;
   max-width: 500px;
   display: flex;
   padding: 1rem;
 
-  justify-content: space-between;
-  align-items: center;
-
   background-color: $blackContainer;
-  .field__text {
+
+  .field__input {
     font-size: 1.5rem;
-    color: $textPassword;
+    color: $text;
+    background-color: inherit;
+    border: none;
+    &::placeholder {
+      color: $textPassword;
+    }
+    &:focus {
+      outline: none;
+    }
   }
   .field__copy_svg {
+    position: absolute;
+    top: 27%;
+    right: 1rem;
+
     width: 21px;
     height: 24px;
     transition: all 0.25s;
     &:active {
       .field__copy_path {
-        transition: all 0.25s;
+        transition: all 0.5s;
         fill: white;
       }
       cursor: pointer;
     }
-  }
-  .field__copy_path {
-    fill: $green;
-  }
-  .copy {
-    gap: 1rem;
-    align-items: center;
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    .field__copy_path {
+      transition: all 0.5s;
+      fill: $green;
+    }
   }
 }
 
@@ -144,7 +156,6 @@
     transition: all 0.25s;
   }
 }
-
 
 @media (max-width: 430px) {
   .strength__description {
