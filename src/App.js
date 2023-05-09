@@ -46,8 +46,9 @@ function App() {
           className={styles.field__input}
           type="text"
           value={password}
+          inputMode="none"
           placeholder={'P4$5W0rD!'}
-          readonly
+          readOnly
         />
         <svg className={styles.field__copy_svg} onClick={getCopyPassword}>
           <path
